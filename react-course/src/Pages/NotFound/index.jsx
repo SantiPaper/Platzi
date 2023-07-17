@@ -1,8 +1,9 @@
+import Layout from "../../Components/Layout"
 function NotFound() {
   return (
-    <div>
+    <Layout>
       NotFound
-    </div>
+    </Layout>
   )
 }
 

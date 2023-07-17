@@ -1,9 +1,7 @@
+import Layout from "../../Components/Layout";
+
 function Home() {
-  return (
-    <div className="bg">
-      Home
-    </div>
-  )
+  return <Layout>Home</Layout>;
 }
 
-export default Home
+export default Home;
