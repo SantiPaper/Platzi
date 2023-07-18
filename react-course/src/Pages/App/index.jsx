@@ -8,15 +8,16 @@ import NotFound from "../NotFound";
 import SignIn from "../SignIn";
 import { NavBar } from "../../Components/NavBar";
 import "./App.css";
+import CheckoutSideMenu from "../../Components/CheckoutSideMenu";
 
 const AppRoutes = () => {
   let routes = useRoutes([
-    { path: '/', element: <Home/> },
-    { path: "/my-account", element: <MyAccount/> },
-    { path: "/my-order", element: <MyOrder/> },
-    { path: "/my-orders", element: <MyOrders/> },
-    { path: "/sign-in", element: <SignIn/> },
-    { path: "/*", element: <NotFound/> },
+    { path: "/", element: <Home /> },
+    { path: "/my-account", element: <MyAccount /> },
+    { path: "/my-order", element: <MyOrder /> },
+    { path: "/my-orders", element: <MyOrders /> },
+    { path: "/sign-in", element: <SignIn /> },
+    { path: "/*", element: <NotFound /> },
   ]);
   return routes;
 };
@@ -24,10 +25,11 @@ const AppRoutes = () => {
 const App = () => {
   return (
     <ShoppingCartProvider>
-    <BrowserRouter>
-      <AppRoutes />
-      <NavBar/>
-    </BrowserRouter>
+      <BrowserRouter>
+        <AppRoutes />
+        <NavBar />
+        <CheckoutSideMenu />
+      </BrowserRouter>
     </ShoppingCartProvider>
   );
 };
