@@ -20,7 +20,6 @@ import { CheckIcon, PlusIcon } from "@heroicons/react/24/solid"
 
   const renderIcon = (id) => {
     const isInCart = context.cartProducts.filter(product => product.id === id).length > 0
-
     if(isInCart) {
       return (
         <button 

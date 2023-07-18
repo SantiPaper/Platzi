@@ -2,11 +2,18 @@ import { useContext } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { ShoppingCartContext } from "../../Context";
 import OrderCard from "../OrderCard";
-import "./index.css"
+import "./index.css";
 
 const CheckoutSideMenu = () => {
   const context = useContext(ShoppingCartContext);
-  console.log(context.isCheckoutSideMenuOpen);
+
+  const handleDelete = (id) => {
+    const filteredProducts = context.cartProducts.filter(
+      (product) => product.id != id
+    );
+    context.setCount(context.count - 1)
+    context.setCartProducts(filteredProducts);
+  };
 
   return (
     <aside
@@ -24,9 +31,11 @@ const CheckoutSideMenu = () => {
         <div className="px-6">
           <OrderCard
             key={product.id}
+            id={product.id}
             title={product.title}
             imageUrl={product.images}
             price={product.price}
+            handleDelete={handleDelete}
           />
         </div>
       ))}
