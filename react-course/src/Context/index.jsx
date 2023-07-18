@@ -7,13 +7,30 @@ export const ShoppingCartProvider = ({ children }) => {
     const [view, setView] = useState(false)
     const openView = () => setView(true)
     const closeView = () => setView(false)
+     
+    //Product detail
+    const [productToShow, setProductToShow] = useState({
+      title: "",
+      price: "",
+      description: "",
+      images: [],
+    });
+
+    //Cart
+    const [cartProducts, setCartProducts] = useState([])
+  
+
   return(
     <ShoppingCartContext.Provider value={{
         count,
         setCount,
         openView,
         closeView,
-        view
+        view,
+        productToShow,
+        setProductToShow,
+        cartProducts,
+        setCartProducts
     }}>
     { children }
     </ShoppingCartContext.Provider>
