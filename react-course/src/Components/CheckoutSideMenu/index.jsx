@@ -39,8 +39,8 @@ const CheckoutSideMenu = () => {
           <XMarkIcon className="h-6 w-6 text-black"></XMarkIcon>
         </button>
       </div>
+      <div className="px-6 flex-1">
       {context.cartProducts.map((product) => (
-        <div className="px-6">
           <OrderCard
             key={product.id}
             id={product.id}
@@ -49,8 +49,8 @@ const CheckoutSideMenu = () => {
             price={product.price}
             handleDelete={handleDelete}
           />
-        </div>
-      ))}
+          ))}
+          </div>
       <hr />
       <div className="px-6">
         <p className="flex justify-between items-center">
@@ -59,7 +59,7 @@ const CheckoutSideMenu = () => {
             ${totalPrice(context.cartProducts)}
           </span>
         </p>
-        <button className="w-full bg-black py-3 text-white rounded-lg mt-2" onClick={() => handleCheckout()}>Checkout</button>
+        <button className="w-full bg-black py-3 text-white rounded-lg" onClick={() => handleCheckout()}>Checkout</button>
       </div>
     </aside>
   );
