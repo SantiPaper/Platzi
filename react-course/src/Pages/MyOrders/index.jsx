@@ -9,12 +9,12 @@ function MyOrders() {
   const context = useContext(ShoppingCartContext)
   return (
     <Layout>
-      <div className="flex w-80 justify-center relative items-center">
+      <div className="flex w-80 justify-center relative items-center mb-10">
         <h1>My Orders</h1>
       </div>
       {
         context.order.map((order,index) => (
-          <Link key={index} to={`/my-orders/${order.id}`}>
+          <Link key={index} to={`/my-orders/${index}`}>
           <OrdersCard
           totalPrice={order.totalPrice}
           totalProducts={order.StotalProducts}
